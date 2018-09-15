@@ -25,6 +25,17 @@ class Moon < Body
     return @planet
   end
 
+  # class methods
+  def self.all(system)
+    moons = []
+    system.bodies.each do |body|
+      if body.class == Moon
+        moons << body
+      end
+    end
+    return moons
+  end
+
 end
 
 #moon1 = Moon.new("earth")

@@ -16,6 +16,17 @@ class Planet < Body
     return @year
   end
 
+  # class methods
+  def self.all(system)
+    planets = []
+    system.bodies.each do |body|
+      if body.class == Planet
+        planets << body
+      end
+    end
+    return planets
+  end
+
 end
 
 # planet1 = Planet.new("earth",1000,24,365)

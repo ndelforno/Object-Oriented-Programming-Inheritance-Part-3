@@ -11,4 +11,14 @@ class Star < Body
     return @type
   end
 
+  def self.all(system)
+    stars = []
+    system.bodies.each do |body|
+      if body.class == Star
+        stars << body
+      end
+    end
+    return stars
+  end
+
 end

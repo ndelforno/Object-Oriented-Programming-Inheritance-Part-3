@@ -16,7 +16,11 @@ class System
   end
 
   def add(body)
-    @bodies << body
+    if bodies.include?(body)
+      puts "Already exist in this system !"
+    else
+      @bodies << body
+    end
   end
 
 
